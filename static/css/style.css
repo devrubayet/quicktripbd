@@ -16,8 +16,8 @@ body{
 
 }
 .banner{
-  background: linear-gradient(85deg, rgba(255, 255, 255, 0.03) 0%, rgba(23, 23, 27, 0.57) 60%),
-      url('../img/bg-banner.jpg');
+  background: linear-gradient(85deg, rgba(23, 23, 27, 0.57) 0%,rgba(255, 255, 255, 0.03) 60%),
+      url('../img/bg-banner1.png');
     background-size: cover;
     background-position: center;
     min-height: 100vh;
