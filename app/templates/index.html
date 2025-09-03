@@ -42,7 +42,7 @@
  
   <!-- Our Service -->
   <section class="container my-5 py-5">
-      <div>
+      
           {% block our-service %}
        
 
@@ -54,7 +54,21 @@
 
 
           {% endblock our-service %}
-      </div>
+      
+  </section>
+
+
+  <section class="container-fluid text-center  py-5 ">
+    <div class="container booking py-0 py-lg-5 px-lg-3 ">
+      <h2 class="py-3 text-center text-light ">Book Your Resarvation</h2>
+        <hr class="my-3 text-light">
+          {% block booking %}
+          {% include 'booking.html' %}
+          {% endblock booking %}
+    </div>
+    
+    <hr class="my-3 ">
+     
   </section>
 
   <section>

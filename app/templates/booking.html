@@ -1,0 +1,237 @@
+{% load static %} {% block booking %}
+
+<div class="search-box mx-auto shadow-lg">
+  <!-- Top Nav -->
+  <ul
+    class="nav nav-tabs justify-content-center nav-top"
+    id="nav-tab"
+    role="tablist"
+  >
+    <li class="nav-item">
+      <button
+        class="nav-link active"
+        href="home-tab"
+        id="nav-home-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#nav-home"
+        type="button"
+        role="tab"
+        aria-controls="nav-home"
+        aria-selected="true"
+        ><i class="bi bi-airplane"></i> Flights</button>
+    </li>
+    <li class="nav-item">
+      <button
+        class="nav-link"
+        id="nav-holiday-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#nav-holiday"
+        type="button"
+        role="tab"
+        aria-controls="nav-holiday"
+        aria-selected="false"
+        ><i class="bi bi-suitcase"></i> Holidays</button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link"
+        id="nav-visa-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#nav-visa"
+        type="button"
+        role="tab"
+        aria-controls="nav-visa"
+        aria-selected="false"><i class="bi bi-passport"></i> Visa</button>
+    </li>
+   
+    <li class="nav-item">
+      <button class="nav-link"
+        id="nav-umrah-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#nav-umrah"
+        type="button"
+        role="tab"
+        aria-controls="nav-umrah"
+        aria-selected="false" ><i class="bi bi-moon-stars"></i> Umrah</button>
+    </li>
+
+  <hr class="container-fluid mt-0">
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+
+    <!-- flights -->
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="home-tab">
+      <!-- Trip Type -->
+      <div class="trip-type d-flex justify-content-start mb-4">
+        <input type="radio" id="oneway" name="trip" checked />
+        <label for="oneway">→ One Way</label>
+
+        <input type="radio" id="round" name="trip" />
+        <label for="round">↔ Round Trip</label>
+
+        <input type="radio" id="multi" name="trip" />
+        <label for="multi">⇄ Multi City</label>
+      </div>
+
+      <!-- Flight Form -->
+      <form>
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label class="form-label fw-bold">From</label>
+            <input type="text" class="form-control" value="Dhaka - DAC" />
+            <small class="text-muted"
+              >Hazrat Shahjalal International Airport</small
+            >
+          </div>
+          <div class="col-md-6">
+            <label class="form-label fw-bold">To</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter airport or city"
+            />
+          </div>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-3">
+            <label class="form-label fw-bold">Departure</label>
+            <input
+              type="date"
+              class="form-control"
+              placeholder="Tap to add a departure date"
+            />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label fw-bold">Return</label>
+            <input
+              type="date"
+              class="form-control"
+              placeholder="Tap to add a return date"
+            />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label fw-bold">Traveller & Class</label>
+            <input
+              type="text"
+              class="form-control"
+              value="1 Person, Economy"
+              readonly
+            />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label fw-bold">Preferred Airlines</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Example: TK, VQ"
+            />
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <label class="form-label fw-bold text-muted">Select Fare Type</label><br />
+            <button type="button" class="fare-btn">Regular Fares</button>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="button" class="search-btn" data-bs-toggle="modal" data-bs-target="#flightModal">Search</button>
+        </div>
+      </form>
+    </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="flightModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    
+        
+        
+           <div class="fare-box modal-dialog bg-white rounded shadow-sm">
+            <div class="modal-header">
+              <h1 class="modal-title text-primary fs-5" id="exampleModalLabel">Flight Bookings</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+              <div class="fare-icon">
+                <i class="fas fa-times"></i>
+              </div>
+              <p>
+                We're diligently working for the best Flights Fares for you.  
+                Please revisit us shortly to check for updates.
+              </p>
+            </div>
+        
+        
+   
+  </div>
+
+    <!-- flights end -->
+
+    <!-- holidays -->
+    <div
+      class="tab-pane fade"
+      id="nav-holiday"
+      role="tabpanel"
+      aria-labelledby="holiday-tab"
+    >
+      <div class="container py-5">
+        <h2 class="text-primary">Holidays Packages</h2>
+        <div class="fare-box bg-white rounded shadow-sm">
+          <div class="fare-icon">
+            <i class="fas fa-times"></i>
+          </div>
+          <p>
+            We're diligently working for the best Holidays Packages for you.  
+            Please revisit us shortly to check for updates.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- visa -->
+    <div
+      class="tab-pane fade"
+      id="nav-visa"
+      role="tabpanel"
+      aria-labelledby="visa-tab"
+    >
+      <div class="container py-5">
+        <h2 class="text-primary">Visa Offers</h2>
+        <div class="fare-box bg-white rounded shadow-sm">
+          <div class="fare-icon">
+            <i class="fas fa-times"></i>
+          </div>
+          <p>
+            We're diligently working for the best Visa Offers for you.  
+            Please revisit us shortly to check for updates.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- umrah  -->
+    
+      <div
+        class="tab-pane fade"
+        id="nav-umrah"
+        role="tabpanel"
+        aria-labelledby="umrah-tab">
+      <div class="container py-5">
+        <h2 class="text-primary">Umrah Fares</h2>
+        <div class="fare-box bg-white rounded shadow-sm">
+          <div class="fare-icon">
+            <i class="fas fa-times"></i>
+          </div>
+          <p>
+            We're diligently working for the best Umrah Fares for you.  
+            Please revisit us shortly to check for updates.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+{% endblock booking %}
