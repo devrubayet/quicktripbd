@@ -1,0 +1,96 @@
+
+{% extends 'base.html' %}
+{% load airlines_tags %}
+
+  {% block content %}
+  
+  {% load static %}
+
+
+
+    <!-- Tracking -->
+  <section   class="banner py-5 ">
+
+    <h2 class="mx-auto px-5">Track & Retrieve your Passport</h2>
+    <hr class="container-fluid">
+
+
+    <div class="container py-5 ">
+
+     
+                
+        <div class="row d-flex justify-content-between align-items-center gap-3">
+            <div class="track col-md-5 h-100 my-5 ">
+                
+        
+                <div class="box">
+                   
+        
+                
+
+                    {% block track %}
+                    {% include 'track_visa.html' %}
+                    {% endblock track %}
+
+
+                   
+                </div>
+            </div>
+            <div  class=" card p-0 col-md-6  rounded-3 overflow-hidden">
+                 <div id="carouselExampleSlidesOnly" class="carousel slide h-10" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+          {% for imgaes in images %}
+          <div class="carousel-item active">
+            <img  src="{{imgaes.image.url}}" class="w-100  d-block " alt="...">
+          </div>
+          {% endfor %}
+          
+        </div>
+      </div>
+            </div>
+        </div>
+       
+        
+    </div>
+
+    
+  </section>
+
+ 
+  <!-- Our Service -->
+  <section class="container my-5 py-5">
+      <div>
+          {% block our-service %}
+       
+
+          
+
+          {% include 'our_service.html' %}
+           
+          
+
+
+          {% endblock our-service %}
+      </div>
+  </section>
+
+  <section>
+    <section class="container">
+              <div class="">
+                {% block testimonial %}
+                {% include 'testimonial.html' %}
+                {% endblock testimonial %}
+              </div>
+              
+            </section>
+
+            {% render_airlines_section %}
+  </section>
+  
+
+  
+
+
+
+
+  {% endblock content %}
