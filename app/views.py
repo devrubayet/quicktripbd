@@ -66,15 +66,16 @@ def track_application(request):
         
         # Prepare the response data to be returned as JSON
         response_data = {
-            'details': {
-                'reference_number': details.reference_number if details else '',
-                'visa_name': details.visa_name if details else '',
-                'visa_status': details.visa_status if details else '',
-                'applicant_name': details.applicant_name if details else '',
-                'submission_date': details.submission_date.strftime('%Y-%m-%d') if details else ''
-            } if details else None,
-            'error_message': error_message
-        }
+                'details': {
+                    'reference_number': details.reference_number if details else '',
+                    'visa_name': details.visa_name if details else '',
+                    'visa_status': details.visa_status if details else '',
+                    'applicant_name': details.applicant_name if details else '',
+                    'submission_date': details.submission_date.strftime('%Y-%m-%d') if details and details.submission_date else '',
+                    'pdf': details.pdf.url if details and details.pdf else ''   # ✅ Use .url
+                } if details else None,
+                'error_message': error_message
+            }
 
         return JsonResponse(response_data)
 

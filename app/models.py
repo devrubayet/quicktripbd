@@ -48,6 +48,8 @@ class CheckStatus(models.Model):
     visa_status = models.CharField(max_length=100)
     applicant_name = models.CharField(max_length=100, null=True, blank=True)
     submission_date = models.DateField(null=True, blank=True)
+    pdf = models.FileField(upload_to="pdf/", )
+    
 
     def __str__(self):
         return self.reference_number

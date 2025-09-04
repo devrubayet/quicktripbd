@@ -43,13 +43,18 @@
                 resultDiv.innerHTML = `<p style="color: red;">${data.error_message}</p>`;
             } else if (data.details) {
                 resultDiv.innerHTML = `
-                    <h2>Application Details</h2>
-                    <p><strong>Reference Number:</strong> ${data.details.reference_number}</p>
-                    <p><strong>Visa Name:</strong> ${data.details.visa_name}</p>
-                    <p><strong>Visa Status:</strong> ${data.details.visa_status}</p>
-                    <p><strong>Applicant Name:</strong> ${data.details.applicant_name}</p>
-                    
-                `;
+                            <h2>Application Details</h2>
+                            <p><strong>Reference Number:</strong> ${data.details.reference_number}</p>
+                            <p><strong>Visa Name:</strong> ${data.details.visa_name}</p>
+                            <p><strong>Visa Status:</strong> ${data.details.visa_status}</p>
+                            <p><strong>Applicant Name:</strong> ${data.details.applicant_name}</p>
+                            ${data.details.pdf 
+                                ? `<p><strong>Your Visa PDF:</strong> <a class="btn btn-primary" href="${data.details.pdf}" target="_blank">Download PDF</a></p>` 
+                                : '<p><strong>Your Visa PDF:</strong> Not Available</p>'
+                            }
+                        `;
+
+                
             }
         })
         .catch(error => {

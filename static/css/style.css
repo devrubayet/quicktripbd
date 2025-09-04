@@ -247,6 +247,9 @@ body{
 .nav-top {
   border-bottom: none;
   margin-bottom: 25px;
+  background: rgba(13, 110, 253, 0.25);
+  border-radius: 10px 10px 0px 0px !important;
+  padding: 5px 0 0 0;
 }
 
 .nav-top .nav-link {
